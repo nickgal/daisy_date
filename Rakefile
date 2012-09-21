@@ -13,11 +13,11 @@ rescue LoadError
   Rake::RDocTask
 end
 
-rdoc_task_class.new do |rdoc|
-  rdoc.rdoc_dir = "rdoc"
-  rdoc.options += RDOC_OPTS
-  rdoc.rdoc_files.add %w"lib/american_date.rb MIT-LICENSE CHANGELOG README.rdoc"
-end
+# rdoc_task_class.new do |rdoc|
+  # rdoc.rdoc_dir = "rdoc"
+  # rdoc.options += RDOC_OPTS
+  # rdoc.rdoc_files.add %w"lib/american_date.rb MIT-LICENSE CHANGELOG README.rdoc"
+# end
 
 begin
   require "spec/rake/spectask"
@@ -32,12 +32,12 @@ end
 
 desc "Run specs"
 spec_class.new("spec") do |t|
-  t.send(spec_files_meth, ["spec/american_date_spec.rb"])
+  t.send(spec_files_meth, ["spec/"])
 end
 task :default=>[:spec]
 
-desc "Package american_date"
+desc "Package daisy_date"
 task :gem=>[:clean] do
-  load './american_date.gemspec'
-  Gem::Builder.new(AMERICAN_DATE_GEMSPEC).build
+  load './daisy_date.gemspec'
+  Gem::Builder.new(DAISY_DATE_GEMSPEC).build
 end

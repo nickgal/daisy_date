@@ -1,4 +1,4 @@
-require File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'lib', 'american_date')
+require File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'lib', 'daisy_date')
 require 'time'
 
 describe "Date.parse" do
